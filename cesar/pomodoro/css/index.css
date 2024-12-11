@@ -1,0 +1,64 @@
+/* Estilo do corpo */
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 50vh;
+  margin: 0;
+  background-color: #e0c6e2;
+  font-family: Arial, sans-serif;
+}
+
+/* Contêiner principal para os quadros de tempo, lado a lado */
+.timers-container {
+  display: flex;
+  gap: 20px; /* Espaçamento entre os quadros */
+}
+
+/* Contêiner para o tempo */
+.chart-container, .chart-container1 {
+  width: 300px;
+  height: 150px;
+  border: 5px solid #000000;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+/* Cores dos contêineres */
+.chart-container {
+  background-color: #f09a9a;
+}
+.chart-container1 {
+  background-color: #c3f3a7;
+}
+
+/* Estilo do título dos quadros */
+h2 {
+  margin-bottom: 50px;
+  color: #050202;
+}
+
+/* Estilo do timer */
+.timer {
+  font-size: 3em;
+  color: #0e0808;
+}
+
+/* Estilo dos botões */
+.buttons-container {
+  display: flex;
+  gap: 20px; /* Espaço entre os botões */
+}
+
+button {
+  font-size: 1.5em; /* Aumenta o tamanho da fonte do botão */
+  padding: 10px 20px; /* Adiciona mais espaço interno para aumentar o tamanho */
+  border-radius: 5px;
+  cursor: pointer;
+}

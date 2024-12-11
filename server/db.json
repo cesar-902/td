@@ -1,0 +1,381 @@
+{
+  "usuarios": [
+    {
+      "id": "1",
+      "login": "admin",
+      "password": "123",
+      "nome": "Administrador do Sistema",
+      "email": "admin@abc.com"
+    },
+    {
+      "id": "2",
+      "login": "user",
+      "password": "123",
+      "nome": "Usuario Comum",
+      "email": "user@abc.com"
+    },
+    {
+      "id": "3",
+      "login": "djbrianbr",
+      "password": "1507",
+      "nome": "Brian Br",
+      "email": "breder@gmail.com"
+    },
+    {
+      "id": "4",
+      "login": "Vazwa",
+      "password": "00990099",
+      "nome": "Wesley Sousa Domingos",
+      "email": "wesley@gmail.com"
+    },
+    {
+      "id": "5",
+      "login": "Nicolas",
+      "password": "12345",
+      "nome": "Nicolas K O Soares",
+      "email": "nicolas@example.com"
+    },
+    {
+      "login": "Vazwa",
+      "password": "0099",
+      "nome": "Wesley Sousa",
+      "email": "wesleysd@gmail.com",
+      "id": "CVIQYXx"
+    },
+    {
+      "login": "Vazwas",
+      "password": "4455",
+      "nome": "Wesley Sousa",
+      "email": "wesleysd@gmail.com",
+      "id": "0eFQSvA"
+    },
+    {
+      "login": "Bauzin",
+      "password": "0099",
+      "nome": "lol",
+      "email": "lol@gmail.com",
+      "id": "zHsKFTB"
+    },
+    {
+      "login": "Pou",
+      "password": "44557788",
+      "nome": "Minas",
+      "email": "rest@gmail.com",
+      "id": "-bTI9GF"
+    },
+    {
+      "login": "Minas",
+      "password": "123456789",
+      "nome": "Maia",
+      "email": "google@gmail.com",
+      "id": "8lW3uqJ"
+    }
+  ],
+  "tarefas": [
+    {
+      "id": "2",
+      "userId": "5",
+      "title": "Manaus",
+      "description": "Descrição da tarefa 1",
+      "start": "2024-11-05 09:00",
+      "end": "2024-12-12 23:27",
+      "repeticao": "Diário",
+      "tags": [
+        "#Puc"
+      ],
+      "emails": [],
+      "pausas": "A cada 30 min",
+      "deletado": false,
+      "progresso": 0,
+      "status": "Concluída"
+    },
+    {
+      "id": "3",
+      "userId": "5",
+      "title": "Wesley",
+      "description": "LOL",
+      "start": "2024-11-05 22:28",
+      "end": "2024-11-05 23:28",
+      "repeticao": "",
+      "tags": [],
+      "emails": [],
+      "pausas": "",
+      "deletado": false,
+      "progresso": 0,
+      "status": "Pendente"
+    },
+    {
+      "id": "4",
+      "userId": "5",
+      "title": "Wesley",
+      "description": "LOL",
+      "start": "2024-12-05 22:28",
+      "end": "2024-12-11 23:28",
+      "repeticao": "",
+      "tags": [],
+      "emails": [],
+      "pausas": "",
+      "deletado": false,
+      "progresso": 0,
+      "status": "Concluída"
+    },
+    {
+      "id": "8",
+      "userId": "5",
+      "title": "Wesley",
+      "description": "LOL",
+      "start": "2024-11-20 22:28",
+      "end": "2024-12-09 23:28",
+      "repeticao": "",
+      "tags": [],
+      "emails": [],
+      "pausas": "",
+      "deletado": false,
+      "progresso": 0,
+      "status": "Pendente"
+    },
+    {
+      "id": "9",
+      "userId": "3",
+      "title": "fernando",
+      "description": "cabelo",
+      "start": "2024-12-10 13:25",
+      "end": "2039-02-12 11:02",
+      "repeticao": "Diário",
+      "tags": [],
+      "emails": [],
+      "pausas": "A cada 5 Min",
+      "deletado": false,
+      "progresso": 0,
+      "status": "Pendente"
+    },
+    {
+      "id": "10",
+      "userId": "3",
+      "title": "sdxx",
+      "description": "",
+      "start": "2024-12-10 14:26",
+      "end": "2024-12-20 16:28",
+      "repeticao": "Diário",
+      "tags": [],
+      "emails": [],
+      "pausas": "",
+      "deletado": false,
+      "progresso": 0,
+      "status": "Pendente"
+    },
+    {
+      "id": 11,
+      "userID": "CVIQYXx",
+      "title": "adaada",
+      "description": "",
+      "start": "2024-12-11T16:26:45.260Z",
+      "end": "2024-12-12 16:29",
+      "repeticao": "",
+      "tags": [],
+      "emails": [],
+      "pausas": "",
+      "deletado": false,
+      "progresso": 0,
+      "status": "Pendente"
+    },
+    {
+      "id": 14,
+      "userID": "zHsKFTB",
+      "title": "a",
+      "description": "s",
+      "start": "2024-12-11T17:48:28.102Z",
+      "end": "2024-12-13 17:51",
+      "repeticao": "",
+      "tags": [],
+      "emails": [],
+      "pausas": "",
+      "deletado": false,
+      "progresso": 0,
+      "status": "Concluída"
+    },
+    {
+      "id": 15,
+      "userID": "zHsKFTB",
+      "title": "Wesley",
+      "description": "4848",
+      "start": "2024-12-11T17:49:17.572Z",
+      "end": "2024-12-13 16:51",
+      "repeticao": "",
+      "tags": [],
+      "emails": [],
+      "pausas": "",
+      "deletado": false,
+      "progresso": 0,
+      "status": "Pendente"
+    },
+    {
+      "id": 16,
+      "userID": "zHsKFTB",
+      "title": "Nicolau",
+      "description": "ased",
+      "start": "2024-12-11T17:55:25.456Z",
+      "end": "2024-12-13 16:57",
+      "repeticao": "",
+      "tags": [],
+      "emails": [],
+      "pausas": "",
+      "deletado": false,
+      "progresso": 0,
+      "status": "Pendente"
+    },
+    {
+      "id": 19,
+      "userID": "-bTI9GF",
+      "title": "Pou",
+      "description": "",
+      "start": "2024-12-11T20:16:49.524Z",
+      "end": "2024-12-12 12:45",
+      "repeticao": "",
+      "tags": [],
+      "emails": [],
+      "pausas": "",
+      "deletado": false,
+      "progresso": 0,
+      "status": "Pendente"
+    },
+    {
+      "id": 20,
+      "userID": "-bTI9GF",
+      "title": "Pousa",
+      "description": "",
+      "start": "2024-12-11T20:16:53.668Z",
+      "end": "2024-12-12 12:45",
+      "repeticao": "",
+      "tags": [],
+      "emails": [],
+      "pausas": "",
+      "deletado": false,
+      "progresso": 0,
+      "status": "Pendente"
+    },
+    {
+      "id": 21,
+      "userID": "8lW3uqJ",
+      "title": "Minas",
+      "description": "4578",
+      "start": "2024-12-11T20:20:41.856Z",
+      "end": "2024-12-12 15:48",
+      "repeticao": "Diário",
+      "tags": [
+        "#45"
+      ],
+      "emails": [],
+      "pausas": "",
+      "deletado": false,
+      "progresso": 0,
+      "status": "Concluída"
+    },
+    {
+      "id": 23,
+      "userID": "8lW3uqJ",
+      "title": "das",
+      "description": "",
+      "start": "2024-12-11T20:21:15.390Z",
+      "end": "2024-12-14 15:24",
+      "repeticao": "",
+      "tags": [],
+      "emails": [],
+      "pausas": "",
+      "deletado": false,
+      "progresso": 0,
+      "status": "Concluída"
+    },
+    {
+      "id": 24,
+      "userID": "8lW3uqJ",
+      "title": "Neymar",
+      "description": "Lol",
+      "start": "2024-12-11T20:41:56.227Z",
+      "end": "2024-12-12 04:05",
+      "repeticao": "Diário",
+      "tags": [
+        "#olk"
+      ],
+      "emails": [
+        "a@gmail.com"
+      ],
+      "pausas": "A cada 30 Min",
+      "deletado": false,
+      "progresso": 0,
+      "status": "Concluída"
+    },
+    {
+      "id": 27,
+      "userID": "8lW3uqJ",
+      "title": "No mess",
+      "description": "na\\das",
+      "start": "2024-12-11T20:45:43.126Z",
+      "end": "2024-12-12 18:46",
+      "repeticao": "Diário",
+      "tags": [
+        "#oi"
+      ],
+      "emails": [
+        "llo@outlook.com"
+      ],
+      "pausas": "A cada 30 Min",
+      "deletado": false,
+      "progresso": 0,
+      "status": "Pendente"
+    }
+  ],
+  "config": {
+    "taskId": 27
+  },
+  "notas": [
+    {
+      "title": "materia esquecida",
+      "role": "matematica",
+      "description": "Muito bom",
+      "priority": "2",
+      "userID": "zHsKFTB",
+      "id": 1
+    },
+    {
+      "title": "materia esquecida",
+      "role": "matematica",
+      "description": "omuito tens",
+      "priority": "2",
+      "userID": "zHsKFTB",
+      "id": 2
+    },
+    {
+      "title": "materia esquecida",
+      "role": "Oloco",
+      "description": "muito tenso",
+      "priority": "2",
+      "userID": "zHsKFTB",
+      "id": 3
+    },
+    {
+      "title": "asd",
+      "role": "saw",
+      "description": "ews",
+      "priority": "2",
+      "userID": "CVIQYXx",
+      "id": 4
+    },
+    {
+      "title": "Fisica",
+      "role": "lol",
+      "description": "lol",
+      "priority": "3",
+      "userID": "8lW3uqJ",
+      "id": 6
+    },
+    {
+      "title": "materia esquecida",
+      "role": "matematica",
+      "description": "omuito tens",
+      "priority": "2",
+      "userID": "8lW3uqJ",
+      "id": 7
+    }
+  ]
+}

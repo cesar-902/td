@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro - Rede Social</title>
+    <link rel="stylesheet" href="css/registro.css">
+</head>
+<body>
+    <div class="register-container">
+        <h1>Crie sua Conta</h1>
+        
+        <!-- Área onde a foto será exibida -->
+        <div id="imagePreview" class="image-preview-container">
+            <img id="profileImagePreview" src="" alt="Sua foto de perfil" style="display:none;">
+        </div>
+        
+        <form id="registerForm" enctype="multipart/form-data">
+            <input type="text" id="name" placeholder="Nome Completo" required>
+            <input type="email" id="email" placeholder="E-mail" required>
+            <input type="password" id="password" placeholder="Senha" required>
+            <input type="password" id="confirmPassword" placeholder="Confirme a Senha" required>
+
+            <!-- Campo para upload de foto -->
+            <input type="file" id="profileImage" accept="image/*" required>
+
+            <div class="terms">
+                <label>
+                    <input type="checkbox" id="acceptTerms"> Eu aceito os <a href="http://127.0.0.1:5500/termo%20de%20uso.html">termos de uso</a> e a <a href="http://127.0.0.1:5500/politica%20de%20privacidade.html">política de privacidade</a>.
+                </label>
+            </div>
+            <button type="submit">Registrar</button>
+        </form>
+        <div class="already-have-account">
+            <p>Já tem uma conta? <a href="http://127.0.0.1:5500/index.html">Faça login</a></p>
+        </div>
+    </div>
+
+    <script>
+        // Função para atualizar a imagem de pré-visualização
+        document.getElementById('profileImage').addEventListener('change', function(event) {
+            const file = event.target.files[0]; // Obtém o arquivo da imagem
+            const reader = new FileReader();
+
+            reader.onload = function(e) {
+                // Exibe a imagem de pré-visualização
+                const imagePreview = document.getElementById('profileImagePreview');
+                imagePreview.style.display = 'block'; // Torna a imagem visível
+                imagePreview.src = e.target.result; // Define o conteúdo da imagem
+            }
+
+            if (file) {
+                reader.readAsDataURL(file); // Lê o arquivo selecionado
+            }
+        });
+
+        document.getElementById('registerForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            const acceptTerms = document.getElementById('acceptTerms').checked;
+            const profileImage = document.getElementById('profileImage').files[0]; // Arquivo de imagem selecionado
+
+            // Verifica se as senhas são iguais
+            if (password !== confirmPassword) {
+                alert('As senhas não coincidem!');
+                return;
+            }
+
+            // Verifica se o usuário aceitou os termos
+            if (!acceptTerms) {
+                alert('Você precisa aceitar os termos de uso e a política de privacidade.');
+                return;
+            }
+
+            // Verifica se uma imagem foi selecionada
+            if (profileImage) {
+                alert('Cadastro realizado com sucesso! Foto selecionada: ' + profileImage.name);
+            } else {
+                alert('Nenhuma foto de perfil selecionada.');
+            }
+
+            // Redirecionar ou enviar os dados para o servidor
+            // window.location.href = 'login.html';
+        });
+    </script>
+</body>
+</html>

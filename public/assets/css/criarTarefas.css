@@ -1,0 +1,324 @@
+body {
+    background-color: #FEFBF8;
+}
+
+.col-lg-10{
+    
+}
+
+h2 {
+    font-weight: normal;
+    font-size: 14pt;
+}
+
+.visualizar-txt {
+    cursor: pointer;
+    color: hwb(278 0% 0%);
+    margin: 0;
+    margin-left: 10px;
+    padding: 10px 0;
+}
+
+#tags-criadas span:hover,
+#users span:hover,
+#pauses:hover,
+#repeat:hover {
+    /* Cor de fundo ao passar o mouse */
+    color: #000;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Alinhar texto com as opcoes - Inicio */
+.d-flex label,
+.d-flex input,
+.d-flex select,
+.d-flex h3,
+.d-flex p {
+    margin: 0 0 5px 2px;
+}
+
+.d-flex label {
+    font-size: 1rem;
+    margin: 0;
+}
+
+#intervaloInput {
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    margin-top: 15px;
+}
+
+/* Alinhar texto com as opcoes - Fim */
+
+
+/* Formulario - Inicio*/
+
+
+.texto {
+    padding: 5px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25), 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+    width: 100%;
+    min-height: 40px;
+    font-size: 16px;
+}
+
+.texto:focus {
+    background-color: #f4edf7;
+}
+
+.d-flex input,
+.d-flex textarea {
+    margin: 0 10px;
+}
+
+textarea {
+    max-width: 100%;
+    max-height: 100px;
+    resize: vertical;
+}
+
+h2~img {
+    width: 10%;
+    max-width: 40px;
+}
+
+/* Formulario - Fim */
+
+/* Overlays */
+#overlays img {
+    width: 10%;
+    max-width: 40px;
+}
+
+.overlay-trigger {
+    cursor: pointer;
+    /* Mostar areas cliclaveis*/
+}
+
+.flex div {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid black;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.3s ease;
+}
+
+.overlay-content {
+    max-width: 300px;
+    background-color: #FEFBF8;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    border: 3px solid black;
+    text-align: center;
+    position: relative;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.overlay-content:hover {
+    transform: scale(1.02);
+}
+
+/* Overlays - Fim */
+
+
+select {
+    width: 100%;
+    margin: 0 auto;
+    cursor: pointer;
+    font-size: 12pt !important;
+    border-radius: 10px;
+    border: 1px solid #5a345a !important;
+}
+
+.btn {
+    border-radius: 10px;
+    border: 1px solid #000;
+    background: #FFF;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25), 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+}
+
+.btn:hover {
+    border: 1px solid black;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.ok {
+    color: #00FF73;
+    border: 1px solid #00FF73;
+    margin: 0 0 0 10px;
+}
+
+.close-btn {
+    color: hsl(3, 73%, 42%);
+    border: 1px solid #75140F;
+    margin-left: auto;
+}
+
+/* Botões (Adicionar, Atualizar, Deletar) - Inicio */
+
+.btns {
+    margin-top: 10px;
+    padding-top: 2px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.acoes {
+    border-radius: 10px;
+    width: 100%;
+    max-width: 80px;
+    padding: 10px;
+    margin: 5px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25), 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+}
+
+.acoes:hover {
+    transform: scale(1.1);
+}
+
+.adicionar {
+    background-color: #E6F0E0;
+    border: 1px solid #35750F;
+}
+
+.atualizar {
+    background-color: #EEF9FC;
+    border: 1px solid #0F7564;
+}
+
+.deletar {
+    background-color: #EADADA;
+    border: 1px solid #75140F;
+    margin-left: auto;
+}
+
+.icon {
+    height: 4vh !important;
+}
+
+/* Botões - Fim */
+
+/* Filtros - Inicio */
+
+#filter-menu {
+    position: absolute;
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    transform: scale(0.95);
+    z-index: 100;
+}
+
+#filter-menu label {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 5px;
+    display: block;
+}
+
+#filtro-status {
+    width: 100%;
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    background-color: #f8f8f8;
+    color: #333;
+    margin-bottom: 10px;
+    transition: border-color 0.3s ease;
+}
+
+#apply-filter {
+    width: 100%;
+    padding: 8px;
+    border-radius: 6px;
+    border: none;
+    background-color: #5a345a;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#apply-filter:hover {
+    background-color: #732a73;
+    color: white;
+    transform: scale(1.02);
+}
+
+/* Filtros - Fim */
+
+/* Tarefas - Inicio */
+
+.colunas {
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.tarefa {
+    background-color: rgba(238, 221, 34, 0.16);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    font-size: clamp(8pt, 2vw, 12pt);
+    height: 5rem;
+    color: black;
+    white-space: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    word-break: break-word;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25), 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.tarefa:hover {
+    transform: scale(1.05);
+}
+
+.tarefa-selecionada {
+    border: 3px solid black !important;
+}
+
+@media all and (min-width: 1000px) {
+    .acoes {
+        max-width: 280px;
+    }
+
+    .overlay-content {
+        width: 600px;
+    }
+}
+
+@media (max-width: 767px) {
+    .rol {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    h2 {
+        font-size: 12pt;
+    }
+}

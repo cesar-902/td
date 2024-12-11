@@ -1,0 +1,8 @@
+{
+    "activities": [
+      { "name": "Estudar", "time": 1500 },
+      { "name": "Exercícios", "time": 600 },
+      { "name": "Leitura", "time": 1200 }
+    ]
+  }
+  

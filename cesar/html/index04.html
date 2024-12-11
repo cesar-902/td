@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documento</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link para o arquivo CSS -->
+</head>
+<body>
+    <h2>REKEEP</h2>
+
+    <!-- Quadro ao redor do gráfico -->
+    <div class="chart-container">
+        <canvas id="myChart"></canvas>
+    </div>
+
+    <!-- Quadro com as estrelas e barras de progresso -->
+    <h3>Avalie seu progresso</h3>
+    <div class="star-rating">
+        <span class="star" data-value="1">★</span>
+        <span class="star" data-value="2">★</span>
+        <span class="star" data-value="3">★</span>
+    </div>
+
+    <div class="progress-container">
+        <div class="progress">
+            <a href="http://127.0.0.1:5500/capa012/html/index04.html">
+                <h2>Tarefa 1</h2>
+            </a>
+            <div class="progress-background">
+                <div class="progress-fill" style="width: 60%; background-color: red;"></div>
+            </div>
+        </div>
+        <div class="progress">
+            <a href="http://127.0.0.1:5500/capa012/html/index04.html">
+                <h2>Tarefa 2</h2>
+            </a>
+            <div class="progress-background">
+                <div class="progress-fill" style="width: 80%; background-color: green;"></div>
+            </div>
+        </div>
+        <div class="progress">
+            <a href="http://127.0.0.1:5500/capa012/html/index04.html">
+                <h2>Tarefa 3</h2>
+            </a>
+            <div class="progress-background">
+                <div class="progress-fill" style="width: 40%; background-color: red;"></div>
+            </div>
+        </div>
+        <div class="progress">
+            <a href="http://127.0.0.1:5500/capa012/html/index04.html">
+                <h2>Tarefa 4</h2>
+            </a>
+            <div class="progress-background">
+                <div class="progress-fill" style="width: 100%; background-color: green;"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script> <!-- Link para o arquivo JavaScript -->
+</body>
+</html>

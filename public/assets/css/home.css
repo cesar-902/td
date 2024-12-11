@@ -1,0 +1,109 @@
+/* Estilos Globais */
+:root {
+    --primary-color: #440544; 
+    --background-color: #FEFBF8; 
+    --hover-effect-color: rgba(0, 0, 0, 0.3); 
+    --box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1); 
+    --border-radius: 10px; 
+    --transition-speed: 0.3s; 
+}
+
+body {
+    height: 100vh;
+    padding: 20px;
+    margin: 0;
+    background-color: var(--background-color);
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    transition: background-color var(--transition-speed) ease-in-out;
+}
+
+.wrapper {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Estilo para as imagens */
+
+
+
+/* Cabeçalho */
+.flex {
+    margin-top: 15px;
+}
+
+
+
+.icons:hover, li:hover {
+    cursor: pointer;
+    filter: brightness(1.2);
+    transform: scale(1.1);
+}
+
+.add {
+    margin-left: auto;
+}
+
+/* Estilo de Tarefa do Dia */
+.tarefa-dia {
+    cursor: pointer;
+    margin-bottom: 10px;
+    background-color: white;
+    border-radius: 20px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.3);
+}
+
+.tarefa-dia h4 {
+    margin-left: 10px;
+}
+
+.tarefa-dia i {
+    font-size: 16pt;
+}
+
+.tarefa-dia i:hover {
+    cursor: pointer;
+}
+
+/* Estilo Responsivo */
+@media all and (max-width: 992px) {
+    #sidebar {
+        transform: translateX(-100%); /* Oculta no mobile */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 280px;
+    }
+
+    #sidebar-content {
+        width: 280px;
+    }
+
+    #menu-icon {
+        display: block;
+        top: 10px;
+        left: 10px;
+        font-size: 24pt;
+    }
+
+    #sidebar.show {
+        transform: translateX(0); /* Exibe a barra lateral */
+    }
+
+    .col-lg-10 {
+        margin-top: 30px;
+    }
+
+    h2 {
+        font-size: 14pt;
+    }
+}

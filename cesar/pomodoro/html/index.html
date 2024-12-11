@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro Timer com Histórico</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #e0c6e2;
+            font-family: Arial, sans-serif;
+            justify-content: center;
+        }
+
+        h2 {
+            font-size: 2.6em;
+            color: #050202;
+            margin: 0 0 20px;
+        }
+
+        .activity-selector {
+            margin-bottom: 20px;
+        }
+
+        .activity-selector select {
+            font-size: 1.2em;
+            padding: 10px;
+        }
+
+        .timer-container {
+            width: 300px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .timer {
+            font-size: 3em;
+            color: #0e0808;
+            border: 3px solid #0e0808;
+            border-radius: 8px;
+            padding: 10px;
+            background-color: white;
+        }
+
+        .button-container {
+            display: flex;
+            gap: 10px;
+        }
+
+        .button {
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .start {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .reset {
+            background-color: #ff6666;
+            color: white;
+        }
+
+        .progress-container {
+            display: flex;
+            justify-content: space-between;
+            width: 80%;
+            max-width: 600px;
+            margin-bottom: 20px;
+        }
+
+        .progress {
+            width: 23%;
+            height: 20px;
+            border-radius: 5px;
+            background-color: rgb(211, 177, 177);
+        }
+
+        .progress.active {
+            background-color: rgb(221, 130, 130);
+        }
+
+        .progress.completed {
+            background-color: rgb(109, 223, 109);
+        }
+
+        .history-table {
+            width: 80%;
+            max-width: 600px;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+
+        .history-table th,
+        .history-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        .history-table th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+
+        .success-row {
+            background-color: #d4edda;
+            color: #155724;
+        }
+
+        .failure-row {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+    </style>
+</head>
+<body>
+    <h2>Pomodoro Timer</h2>
+    
+    <div class="activity-selector">
+        <label for="activity">Selecione a atividade:</label>
+        <select id="activity">
+            <!-- Atividades serão carregadas aqui -->
+        </select>
+    </div>
+
+    <div class="progress-container">
+        <div class="progress" id="pomodoro1"></div>
+        <div class="progress" id="pomodoro2"></div>
+        <div class="progress" id="pomodoro3"></div>
+        <div class="progress" id="pomodoro4"></div>
+    </div>
+
+    <div class="timer-container">
+        <div id="timer" class="timer">25:00</div>
+    </div>
+
+    <div class="button-container">
+        <button class="button start" id="startButton" onclick="toggleTimer()">Iniciar</button>
+        <button class="button reset" onclick="resetTimer()">Resetar</button>
+    </div>
+
+    <table class="history-table" id="historyTable">
+        <thead>
+            <tr>
+                <th>Atividade</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody id="historyTableBody">
+            <!-- Histórico será adicionado dinamicamente -->
+        </tbody>
+    </table>
+
+    <script>
+        let isRunning = false;
+        let timerInterval;
+        let currentTime = 1500; // Tempo padrão de 25 minutos
+        let pomodoroCount = 0;
+
+        // Função para buscar as atividades do servidor JSON
+        async function fetchActivities() {
+            try {
+                const response = await fetch("http://localhost:3000/activities");
+                const data = await response.json();
+                const activitySelector = document.getElementById("activity");
+                data.forEach(activity => {
+                    const option = document.createElement("option");
+                    option.value = activity.time;
+                    option.textContent = activity.name;
+                    activitySelector.appendChild(option);
+                });
+                resetTimer(); // Define o primeiro tempo
+            } catch (error) {
+                console.error("Erro ao carregar atividades:", error);
+            }
+        }
+
+        // Função para formatar o tempo do cronômetro
+        function formatTime(seconds) {
+            const mins = Math.floor(seconds / 60);
+            const secs = seconds % 60;
+            return `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+        }
+
+        // Função para atualizar o display do cronômetro
+        function updateTimerDisplay() {
+            document.getElementById("timer").textContent = formatTime(currentTime);
+        }
+
+        // Função para alternar o estado do cronômetro
+        function toggleTimer() {
+            const startButton = document.getElementById("startButton");
+            if (isRunning) {
+                clearInterval(timerInterval);
+                startButton.textContent = "Iniciar";
+                addHistoryItem(false); // Não concluído
+            } else {
+                startButton.textContent = "Pronto";
+                startTimer();
+            }
+            isRunning = !isRunning;
+        }
+
+        // Função para iniciar o cronômetro
+        function startTimer() {
+            document.getElementById("timer").style.backgroundColor = "red"; // Muda a cor para vermelho ao iniciar
+            timerInterval = setInterval(() => {
+                if (currentTime > 0) {
+                    currentTime--;
+                    updateTimerDisplay();
+                } else {
+                    clearInterval(timerInterval);
+                    isRunning = false;
+                    document.getElementById("startButton").textContent = "Iniciar";
+                    addHistoryItem(true); // Concluído
+                    setTimeout(() => {
+                        document.getElementById("timer").style.backgroundColor = "green"; // Muda a cor para verde após completar
+                    }, 1000);
+                }
+            }, 1000);
+        }
+
+        // Função para resetar o cronômetro
+        function resetTimer() {
+            clearInterval(timerInterval);
+            isRunning = false;
+            currentTime = parseInt(document.getElementById("activity").value);
+            updateTimerDisplay();
+            document.getElementById("startButton").textContent = "Iniciar";
+            document.getElementById("timer").style.backgroundColor = "white"; // Cor de fundo padrão
+        }
+
+        // Função para adicionar item ao histórico no servidor JSON
+        async function addHistoryItem(success) {
+            const activityName = document.getElementById("activity").options[document.getElementById("activity").selectedIndex].text;
+
+            const pomodoro = {
+                status: success ? "Concluído" : "Não Concluído",
+                activity: activityName
+            };
+
+            try {
+                const response = await fetch("http://localhost:3000/pomodoros", {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(pomodoro)
+                });
+                const result = await response.json();
+                console.log("Pomodoro adicionado ao histórico:", result);
+            } catch (error) {
+                console.error("Erro ao adicionar Pomodoro ao histórico:", error);
+            }
+
+            // Atualiza a tabela de histórico na interface
+            const tableBody = document.getElementById("historyTableBody");
+            const row = document.createElement("tr");
+            row.className = success ? "success-row" : "failure-row";
+            row.innerHTML = `
+                <td>${activityName}</td>
+                <td>${success ? "Concluído ✅" : "Não Concluído ❌"}</td>
+            `;
+            tableBody.prepend(row);
+        }
+
+        // Atualiza o histórico de atividades sempre que o valor do seletor mudar
+        document.getElementById("activity").addEventListener("change", resetTimer);
+
+        // Chama a função para buscar as atividades ao carregar a página
+        fetchActivities();
+    </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+{
+    "projects": [
+      {
+        "id": 1,
+        "name": "Projeto de Gráficos e Estrelas",
+        "description": "Um projeto web com gráficos, estrelas clicáveis e barras de progresso.",
+        "chartData": {
+          "labels": ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+          "data": [12, 19, 3, 5, 2, 3]
+        },
+        "rating": 4,
+        "progressBars": [
+          { "value": 60 },
+          { "value": 80 },
+          { "value": 40 },
+          { "value": 100 },
+          { "value": 20 }
+        ]
+      }
+    ]
+  }
+  

@@ -1,0 +1,201 @@
+/* Estilo Geral */
+body {
+    padding: 20px;
+    margin: 0;
+    background-color: #FEFBF8;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+.wrapper {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+img{
+    width: 50%;
+    border-radius: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+a{
+    text-decoration: none;
+    color: #440544;
+}
+
+/* Barra lateral */
+#sidebar {
+    top: 0;
+    left: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FEFBF8;
+    border-right: 1px solid black;
+    color: #fff;
+    padding: 20px;
+    transition: transform 0.3s ease;
+    z-index: 1000;
+}
+
+#sidebar ul {
+    list-style: none;
+}
+
+#sidebar li {
+    margin: 15px 0;
+    cursor: pointer;
+}
+
+#sidebar-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #440544;
+}
+
+#menu-icon {
+    display: none;
+    position: sticky;
+    top: 0px;
+    left: 10px;
+    font-size: 24pt;
+    z-index: 1000;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Cabeçalho */
+.flex {
+    margin-top: 15px;
+}
+
+.icons {
+    width: 40px;
+}
+
+.icons:hover, li:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.add {
+    margin-left: auto;
+}
+
+#data-atual {
+    font-size: 16pt;
+}
+
+/* Conteúdo com rolagem */
+#calendar-container {
+    height: 600px;
+    overflow-y: auto;
+}
+
+/* Overlay */
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: none; 
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+#overlay-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+    color: #333;
+}
+
+.cabecalho {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.overlay-title {
+    font-weight: bold;
+}
+
+#edit {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Botões */
+.btns {
+    display: flex;
+    margin-left: auto;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.btn {
+    background-color: white;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25) inset;
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: gray;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    transform: translateY(-5px);
+}
+
+/* Estilo Responsivo */
+@media all and (max-width: 800px) {
+    #sidebar {
+        transform: translateX(-100%); /* Oculta no mobile */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 280px;
+    }
+
+    #menu-icon {
+        display: block;
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        font-size: 24pt;
+    }
+
+    #sidebar.show {
+        transform: translateX(0); /* Exibe a barra lateral */
+    }
+
+    .col-md-10{
+        margin-top: 30px;
+    }
+
+    h2 {
+        font-size: 14pt;
+    }
+}

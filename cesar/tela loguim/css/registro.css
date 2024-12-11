@@ -1,0 +1,91 @@
+/* Estilos gerais */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #72389ccb;  /* Mantém o fundo roxo claro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.register-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    background-color: #c18adf; /* Fundo branco */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.register-container h1 {
+    margin-bottom: 20px;
+    color: #4a0072; /* Mantém o roxo no título */
+}
+
+.register-container input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.register-container button {
+    width: 100%;
+    padding: 15px;
+    background-color: #4a007296; /* Cor de fundo roxa no botão */
+    color: rgb(245, 245, 245);
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.register-container button:hover {
+    background-color: #000000; /* Cor de fundo preta ao passar o mouse */
+}
+
+/* Estilo para a visualização da imagem */
+.image-preview-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+#profileImagePreview {
+    width: 120px;   /* Largura proporcional */
+    height: 160px;  /* Altura proporcional */
+    object-fit: cover; /* Faz a imagem preencher o container sem distorção */
+    border-radius: 10px;
+    display: none; /* Inicialmente invisível */
+}
+
+.terms {
+    font-size: 14px;
+    margin-bottom: 15px;
+    color: #030303;
+}
+
+.terms input {
+    margin-right: 8px;
+}
+
+.already-have-account {
+    margin-top: 10px;
+}
+
+.already-have-account a {
+    color: #f00202;  /* Cor roxa nos links */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.already-have-account a:hover {
+    text-decoration: underline;
+}

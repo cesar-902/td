@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes notas - Tempus</title>
+    <script src="assets/js/verificarUser.js"></script>
+
+    <link rel="icon" type="image/x-icon" href="assets/img/icon/icon.png">
+    <link rel="stylesheet" href="assets/css/notaDetalhada.css">
+    <script src="assets/js/exibirNota.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <header id="header">
+            <h1>Detalhes da Nota</h1>
+        </header>
+
+        <main id="componentes">
+            <form id="form-nota" action="#">
+                <label for="id-input">ID da nota:</label>
+                <input id="id-input" type="text" value="" readonly>
+
+                <label for="titulo-input">Título:</label>
+                <input id="titulo-input" type="text" value="" readonly>
+
+                <label for="descricao-input">Descrição:</label>
+                <textarea id="descricao-input" readonly></textarea>
+
+                <label for="prioridade-input">Prioridade:</label>
+                <input id="prioridade-input" type="text" value="" readonly>
+            </form>
+            <div id="voltar-btn-container" class="d-flex justify-content-end mt-4">
+                <button id="voltar-btn" type="button" class="btn btn-outline-danger" onclick="window.location.href='notas.html'">Voltar</button>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

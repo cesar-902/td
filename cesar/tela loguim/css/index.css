@@ -1,0 +1,85 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #c395e4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 140vh;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-container img {
+    width: 600px;
+    height: 500px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.login-container {
+    width: 300px;
+    padding: 20px;
+    background-color: #72389ccb;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(12, 9, 9, 0.1);
+}
+
+.login-container h1 {
+    text-align: center;
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+.login-container input, .login-container button {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.login-container button {
+    background-color: #00000075;
+    color: rgba(255, 255, 255, 0.651);
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-container button:hover {
+    background-color: #dfdede;
+}
+
+.login-container button:active {
+    background-color: #66cc66;
+}
+
+.create-account-btn {
+    background-color: #e76560;
+    color: rgb(226, 85, 85);
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    padding: 12px;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.create-account-btn:hover {
+    background-color: #ec5050;
+}

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/styles/index.css" />
+    <link rel="stylesheet" href="/styles/responsividade.css" />
+    <title>Integrações</title>
+</head>
+<body>
+
+    <!-- NAV BAR -->
+    <nav class="navbar">
+        <div class="content">
+            <div class="logo">
+                <a href="#">Tempus Dominus</a>
+            </div>
+            <ul class="menu-list">
+                <div class="icon cancel-btn">
+                    <i class="fas fa-times"></i>
+                </div>
+                <li><a href="#home">Início</a></li>
+                <li><a href="#calendario">Calendário</a></li>
+                <li><a href="#ajuda">Ajuda</a></li>
+                <li><a href="..">Perfil</a></li>
+            </ul>
+            <div class="icon menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!--CONTAINER INTEGRAÇÕES-->
+    <main class="container-main">
+        <section class="integracoes">
+            <div class="containerIntegracoes">
+                <h1>Integrações</h1>
+
+                <h2>Meus Amigos</h2>
+                <!-- Lista de amigos -->
+                <ul id="friend-list"></ul>
+                
+                <button class="add-friend-btn" id="openAddFriendModal">Adicionar amigos</button>
+
+                <button class="action-btn create-team-btn">Crie um time com seus amigos</button>
+                <button class="action-btn">Adicione amigos nos seus calendários</button>
+
+                <p>Compartilhe o link do seu perfil:</p>
+                <div class="share-link">
+                    <a id="profile-link" href="https://www.tempusdominus.com/Vazwa">
+                      https://www.tempusdominus.com/Vazwa</a>
+                    <button class="copy-btn" onclick="copyToClipboard()">
+                      <i class="fa fa-copy"></i> Copiar
+                    </button>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal para adicionar amigo -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Adicionar Amigo</h2>
+            <p>Digite o nome do amigo que você deseja adicionar:</p>
+            <input type="text" id="friend-name" placeholder="Nome do amigo" />
+            <button id="addFriendConfirm">Adicionar</button>
+        </div>
+    </div>
+
+
+    <!--Footer-->
+    <div class="footer">
+        <div class="footer-content">
+            <img src="#" alt="" width="80px" /><!--COLOCAR A LOGO DEPOIS-->
+            <div class="footer-contact">
+                <p>(31) 99999-9999</p>
+                <p>TempusDominus@gmail.com</p>
+            </div>
+        </div>
+        <div class="social-icons">
+            <a href="#" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="#" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+    </div>
+    <script src="/js/script.js"></script>
+</body>
+</html>

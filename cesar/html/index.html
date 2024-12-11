@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documento</title>
+    <style>
+        /* Estilo do corpo */
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 50vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Contêiner para o gráfico */
+        .chart-container {
+            border: 5px solid #c4b0d8;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #ffffff;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* Define o tamanho do canvas */
+        #myChart {
+            width: 500px;
+            height: 300px;
+        }
+
+        /* Estilo para o título */
+        h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        /* Estilo das estrelas */
+        .star-rating {
+            display: flex; /* Usar flexbox para centralizar */
+            justify-content: center; /* Centraliza horizontalmente */
+            margin: 20px 0; /* Espaço entre estrelas e barras de progresso */
+        }
+
+        .star {
+            font-size: 30px;
+            color: #ccc;
+            cursor: pointer;
+            margin: 0 5px; /* Espaço entre as estrelas */
+        }
+
+        /* Estrela selecionada */
+        .star.selected {
+            color: #ffcc00; /* Cor amarela quando selecionada */
+        }
+
+        /* Estilo das barras de progresso */
+        .progress-container {
+            display: flex;
+            flex-direction: column; /* Alinha as barras de progresso verticalmente */
+            align-items: flex-start; /* Alinha à esquerda */
+            margin-top: 20px;
+        }
+
+        .progress {
+            display: flex; /* Alinha o título e a barra de progresso na horizontal */
+            align-items: center; /* Alinha verticalmente */
+            width: 300px; /* Largura fixa para as barras */
+            margin: 10px 0; /* Espaço entre as barras */
+        }
+
+        .progress-fill {
+            height: 20px; /* Altura da barra de progresso */
+            border-radius: 5px;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .progress-background {
+            width: 100%;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            position: relative;
+            height: 20px; /* Altura da barra de fundo */
+        }
+
+        h3 {
+            margin: 20px 0;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h2>REKEEP</h2>
+
+    <!-- Quadro ao redor do gráfico -->
+    <div class="chart-container">
+        <canvas id="myChart"></canvas>
+    </div>
+
+    <!-- Quadro com as estrelas e barras de progresso -->
+    <h3>Avalie seu progresso</h3>
+    <div class="star-rating">
+        <span class="star" data-value="1">★</span>
+        <span class="star" data-value="2">★</span>
+        <span class="star" data-value="3">★</span>
+    </div>
+
+    <div class="progress-container">
+        <div class="progress">
+            <a href="http://127.0.0.1:5500/capa012/html/index03.html">
+            <h2>Tarefa </h2></a>
+            <div class="progress-background">
+                <div class="progress-fill" style="width: 60%; background-color: red;"></div>
+            </div>
+        </div>
+        <div class="progress">
+            <a href="http://127.0.0.1:5500/capa012/html/index03.html">
+            <h2>Tarefa </h2></a>
+            <div class="progress-background">
+                <div class="progress-fill" style="width: 80%; background-color: green;"></div>
+            </div>
+        </div>
+        <div class="progress">
+            <a href="http://127.0.0.1:5500/capa012/html/index04.html">
+                <h2>Tarefa </h2></a>
+            <div class="progress-background">
+                <div class="progress-fill" style="width: 40%; background-color: red;"></div>
+            </div>
+        </div>
+        <div class="progress">
+            <a href="http://127.0.0.1:5500/capa012/html/index04.html">
+            <h2>Tarefa </h2></a>
+            <div class="progress-background">
+                <div class="progress-fill" style="width: 100%; background-color: green;"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const ctx = document.getElementById('myChart').getContext('2d');
+
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['seg', 'ter', 'qua', 'qui', 'sex', 'sab', 'dom'],
+                datasets: [{
+                    label: 'Gráfico',
+                    data: [12, 19, 3, 5, 2, 3, 7],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: false,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        // Lógica das estrelas
+        const stars = document.querySelectorAll('.star');
+        stars.forEach(star => {
+            star.addEventListener('click', () => {
+                stars.forEach(s => s.classList.remove('selected'));
+                star.classList.add('selected');
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,213 @@
+<!doctype html>
+<html class="no-js" lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Calendario - Tempus</title>
+  <link rel="icon" type="image/x-icon" href="assets/img/icon/icon.png">
+
+
+  <script src="assets/js/verificarUser.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/preact@10.23.2/dist/preact.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/preact@10.23.2/hooks/dist/hooks.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@preact/signals-core@1.8.0/dist/signals-core.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@preact/signals@1.3.0/dist/signals.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/preact@10.23.2/jsx-runtime/dist/jsxRuntime.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/preact@10.23.2/compat/dist/compat.umd.js"></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@schedule-x/calendar@2.2.0/dist/core.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@schedule-x/event-modal@2.2.0/dist/core.umd.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@schedule-x/theme-default@2.2.0/dist/index.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="assets/css/sidebar.css">
+    <link rel="stylesheet" href="assets/css/schedule.css">
+    <script src="assets/js/schedule.js"></script>
+</head>
+
+<body>
+    <main class="row">
+        <div class="col-lg-2">
+            <div class="sidebar" id="sidebar">
+                <div id="sidebar-content">
+                  <div class="flex">
+                    <img src="https://i.pinimg.com/736x/65/ff/c1/65ffc1c31998a934a11aada32bb1e58b.jpg" alt="perfil" />
+                    <p id="username">Brian</p>
+                  </div>
+                  <ul>
+                    <li>
+                      <a href="criarTarefas.html"
+                        ><svg
+                          class="icons"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 -960 960 960"
+                          fill="#000"
+                        >
+                          <path
+                            d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"
+                          />
+                        </svg>
+                        Adicionar Tarefas</a
+                      >
+                    </li>
+                    <li>
+                      <a href="home.html"
+                        ><svg
+                          class="icons"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 -960 960 960"
+                          fill="#000"
+                        >
+                          <path
+                            d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z"
+                          />
+                        </svg>
+                        Home</a
+                      >
+                    </li>
+                    <li>
+                      <a href="schedule.html"
+                        ><svg
+                          class="icons"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 -960 960 960"
+                          fill="#000"
+                        >
+                          <path
+                            d="M200-80q-33 0-56.5-23.5T120-160v-560q0-33 23.5-56.5T200-800h40v-80h80v80h320v-80h80v80h40q33 0 56.5 23.5T840-720v560q0 33-23.5 56.5T760-80H200Zm0-80h560v-400H200v400Zm0-480h560v-80H200v80Zm0 0v-80 80Z"
+                          />
+                        </svg>
+                        Calendário</a
+                      >
+                    </li>
+                    <li>
+                      <a href="notas.html"
+                        ><svg
+                          class="icons"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M4 7.2C4 6.07989 4 5.51984 4.21799 5.09202C4.40973 4.71569 4.71569 4.40973 5.09202 4.21799C5.51984 4 6.07989 4 7.2 4H16.8C17.9201 4 18.4802 4 18.908 4.21799C19.2843 4.40973 19.5903 4.71569 19.782 5.09202C20 5.51984 20 6.07989 20 7.2V13.8C20 14.9201 20 15.4802 19.782 15.908C19.5903 16.2843 19.2843 16.5903 18.908 16.782C18.4802 17 17.9201 17 16.8 17H15.6627C15.4182 17 15.2959 17 15.1808 17.0276C15.0787 17.0521 14.9812 17.0925 14.8917 17.1474C14.7908 17.2092 14.7043 17.2957 14.5314 17.4686L12 20L9.46863 17.4686C9.29568 17.2957 9.2092 17.2092 9.10828 17.1474C9.01881 17.0925 8.92127 17.0521 8.81923 17.0276C8.70414 17 8.58185 17 8.33726 17H7.2C6.0799 17 5.51984 17 5.09202 16.782C4.71569 16.5903 4.40973 16.2843 4.21799 15.908C4 15.4802 4 14.9201 4 13.8V7.2Z"
+                            stroke="#000000"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                        Anotações</a
+                      >
+                    </li>
+                    <li>
+                      <a href="relatorio.html"
+                        ><svg class=" icons" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"
+                        fill="#000">
+                        <path
+                            d="M620-163 450-333l56-56 114 114 226-226 56 56-282 282Zm220-397h-80v-200h-80v120H280v-120h-80v560h240v80H200q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h167q11-35 43-57.5t70-22.5q40 0 71.5 22.5T594-840h166q33 0 56.5 23.5T840-760v200ZM480-760q17 0 28.5-11.5T520-800q0-17-11.5-28.5T480-840q-17 0-28.5 11.5T440-800q0 17 11.5 28.5T480-760Z" />
+                    </svg>
+                        Relatório</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+            </div>
+            <div onclick="mostrarMenu()" class="menu-icon" id="menu-icon">
+
+                <svg class="icons" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="#000">
+                    <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
+                </svg>
+            </div>
+        </div>
+        <div class="col-lg-10">
+            <div class="flex">
+                <h1>Calendário</h1>
+                <a class="add" href="criarTarefas.html">
+                    <svg class="icons" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="#000">
+                        <path
+                            d="M680-80v-120H560v-80h120v-120h80v120h120v80H760v120h-80Zm-480-80q-33
+                    0-56.5-23.5T120-240v-480q0-33 23.5-56.5T200-800h40v-80h80v80h240v-80h80v80h40q33
+                    0 56.5 23.5T760-720v244q-20-3-40-3t-40 3v-84H200v320h280q0 20 3 40t11 40H200Zm0-480h480v-80H200v80Zm0 0v-80 80Z" />
+                    </svg>
+                </a>
+            </div>
+            <p id="data-atual">Data</p>
+
+            <div id="calendar-container">
+                <div class="calendar"></div>
+            </div>
+
+            <div class="flex">
+                <h2>Conectar um calendário:</h2>
+                <div class="btns">
+                    <button class="btn">
+                        <svg class="icons" fill="#000000" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 210 210" xml:space="preserve">
+                            <path d="M0,105C0,47.103,47.103,0,105,0c23.383,0,45.515,7.523,64.004,21.756l-24.4,31.696C133.172,44.652,119.477,40,105,40
+	                c-35.841,0-65,29.159-65,65s29.159,65,65,65c28.867,0,53.398-18.913,61.852-45H105V85h105v20c0,57.897-47.103,105-105,105
+	                S0,162.897,0,105z" />
+                        </svg>
+                    </button>
+
+                    <button class="btn">
+                        <svg class="icons" fill="#000000" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M22,8v8a.94.94,0,0,1-1,1H14v4L2,19.2V4.8L14,3V7h7a.94.94,0,0,1,1,1 
+                        m-1,.1-4,2.3L14,8.7v1.6L17,12l4-2.3V8.1m-13.08,0c-2.1-.07-3.13,1.78-3.13,4s1.07,4,3.13 
+                        ,4c1.87,0,3.08-1.69,3.08-3.89s-.87-4-3.08-4.08M7.61,9.7c.84,0,1.59.74,1.59,2.25s-.75,2.36-1.59,2.36S6.1,13.2,6.1,12,6.78,9.7,7.61,9.7Z" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- overlay -->
+        <div id="overlay" onclick="fecharTarefa(event)">
+            <div id="overlay-content">
+                <div class="cabecalho">
+                    <h2 id="overlay-title"></h2>
+                    <a href="home.html">
+                        <svg class="icons" id="edit" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"
+                            fill="#000">
+                            <path d="M200-200h57l391-391-57-57-391 391v57Zm-80 80v-170l528-527q12-11 26.5-17t30.5-6q16 0
+                                31 6t26 18l55 56q12 11 17.5 26t5.5 30q0 16-5.5 30.5T817-647L290-120H120Zm640-584-56-56 56
+                                56Zm-141 85-28-29 57 57-29-28Z" />
+                        </svg>
+                    </a>
+                </div>
+
+                <p id="overlay-details"></p>
+                <div class="flex">
+                    <p>Tags:</p>
+                    <p id="overlay-tags"></p>
+                </div>
+                <div>
+                    <p>Emails:</p>
+                    <p id="overlay-emails"></p>
+                </div>
+                <div class="flex">
+                    <svg class="icons" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="#000">
+                        <path d="m612-292 56-56-148-148v-184h-80v216l172 172ZM480-80q-83 
+                            0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 
+                            127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 
+                            156T763-197q-54 54-127 85.5T480-80Zm0-400Zm0 320q133 0 226.5-93.5T800-480q0-133-93.5-226.5T480-800q-133 0-226.5 93.5T160-480q0 
+                            133 93.5 226.5T480-160Z" />
+                    </svg>
+                    <p id="overlay-date"></p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="assets/js/sidebar.js"></script>
+</body>
+
+</html>

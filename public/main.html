@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Área de Estudos</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <script src="assets/js/main.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <header id="header">
+            <div id="botoes">
+                <button class="btn" id="criar-botao">Novo</button>
+                <button class="btn" id="excluir-botao" hidden>Excluir</button>
+            </div>
+        </header>
+
+        <aside id="barra-aside">
+            <h2>Notas Cadastradas</h2>
+            <ul id="lista-notas"></ul>
+        </aside>
+
+        <main id="componentes" style="display: none;">
+            <h1>Área de Estudos</h1>
+            <form id="form-nota" action="#">
+                <input id="titulo-input" type="text" placeholder="Título" required>
+                <textarea id="descricao-input" placeholder="Descrição" required></textarea>
+                <label for="Prioridade">Prioridade:</label>
+                <select id="selecionar-input" name="prioridade">
+                    <option value="Baixa">Baixa</option>
+                    <option value="Média">Média</option>
+                    <option value="Alta">Alta</option>
+                </select>
+                <button id="salvar-botao" type="submit">Salvar</button>
+            </form>
+        </main>
+    </div>
+</body>
+</html>
